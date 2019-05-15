@@ -1,3 +1,5 @@
+import { SAVE_EMAIL, SAVE_ROLE } from '../helpers/constants'
+
 const authentication = {
   email: '',
   role: ''
@@ -5,12 +7,12 @@ const authentication = {
 
 const Authentication = (state = authentication, action) => {
   switch (action.type) {
-      case 'SAVE_EMAIL':
+      case SAVE_EMAIL:
         return {
           ...state,
           email: action.email
         };
-      case 'SAVE_ROLE':
+      case SAVE_ROLE:
         return {
           ...state,
           role: action.role

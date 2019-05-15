@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { SAVE_EMAIL, SAVE_ROLE } from '../helpers/constants'
 
 function mapStateToProps(state) {
   return {
@@ -23,7 +24,7 @@ class LoginForm extends Component {
 
  email = emailAddress => {
     return {
-      type: "SAVE_EMAIL",
+      type: SAVE_EMAIL,
       emailAddress
     };
   };
@@ -31,7 +32,7 @@ class LoginForm extends Component {
 
   role = roleType => {
     return {
-      type: "SAVE_ROLE",
+      type: SAVE_ROLE,
       roleType
     };
   }

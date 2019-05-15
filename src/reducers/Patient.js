@@ -1,3 +1,11 @@
+import { 
+  UPDATE_NAME, 
+  UPDATE_AGE, 
+  UPDATE_EMAIL, 
+  UPDATE_ADDRESS,
+  UPDATE_PHONE 
+} from '../helpers/constants'
+
 const patientInitialState = {
     name: 'Derby Mann',
     age: '22',
@@ -8,27 +16,27 @@ const patientInitialState = {
   
   const Patient = (state = patientInitialState, action) => {
     switch (action.type) {
-        case 'UPDATE_NAME':
+        case UPDATE_NAME:
           return {
             ...state,
             name: action.name
           };
-        case 'UPDATE_AGE':
+        case UPDATE_AGE:
           return {
             ...state,
             age: action.age
           };
-        case 'UPDATE_EMAIL':
+        case UPDATE_EMAIL:
           return {
             ...state,
             email: action.email
         };
-        case 'UPDATE_ADDRESS':
+        case UPDATE_ADDRESS:
           return {
             ...state,
             address: action.address
         };
-        case 'UPDATE_PHONE':
+        case UPDATE_PHONE:
           return {
             ...state,
             phone: action.phone
