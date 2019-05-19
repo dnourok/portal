@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-var webpack = require('webpack');
+const  webpack = require('webpack');
+
 module.exports = {
   mode: 'development',
   resolve: {
