@@ -1,20 +1,18 @@
 import React from 'react'
-import { render } from 'react-dom'
-import LoginForm from './components/LoginForm'
-import PatientForm from './components/PatientForm'
-import DoctorView from './components/PatientList'
 import { Provider } from 'react-redux'
+import { render } from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App';
 import store from './helpers/store';
 
-const App = () => (
-  <Provider store={store}>
-    <div>
-      <h2>Healthcare App</h2>
-      <LoginForm/>
-      <PatientForm/>
-      <DoctorView/>
-    </div>
-  </Provider>
-)
+const root = document.getElementById('root')
 
-render(<App />, document.getElementById('root'))
+
+render((
+  <Provider store={store}>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  </Provider>
+), root);
+

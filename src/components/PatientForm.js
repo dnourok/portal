@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 function mapStateToProps(state) {
   return {
@@ -60,6 +61,7 @@ class PatientForm extends Component {
         <Button color="primary">primary</Button>
       </Form>
       <h1>------------------------------------</h1>
+      <Link to='/patient'>Back</Link>
       </div>
     )
   }

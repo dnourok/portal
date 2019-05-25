@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { SAVE_EMAIL, SAVE_ROLE } from '../helpers/constants'
+import { Link } from 'react-router-dom'
+
 
 function mapStateToProps(state) {
   return {
@@ -86,6 +88,8 @@ handleSubmit(event) {
           Login
         </Button>
       </form>
+      <Link to='/'>Back</Link>
+
     </div>
     )
   }
