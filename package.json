@@ -6,6 +6,7 @@
   "scripts": {
     "build-server": "rm -rf dist && webpack --config server/webpack.server.js --mode development",
     "start-server": "node ./server/dist/server.js",
+    "server": "npm run build-server && npm run start-server",
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production"
   },
