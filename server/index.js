@@ -17,7 +17,7 @@ client.connect(function(err,db){
 
     client.db("sample_healthcare").collection("clients")
     .find().toArray().then((data) => {
-      const clients = JSON.stringify(data)
+      const clients = JSON.stringify(data);
       console.log(clients)
 
       // write client to a new file named patientData.js
