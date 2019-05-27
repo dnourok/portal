@@ -3,6 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
 // const PORT = process.env.PORT || 3000 
 // const server = express();
+
 const uri =  'mongodb+srv://dnourok:' + password + '@portal-lsi4f.mongodb.net/'
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
@@ -13,11 +14,11 @@ client.connect(function(err,db){
   }
   else {
       console.log('connected to '+ uri);
-      client.db("sample_weatherdata").collection('data').findOne({},function(err, data) {
-        console.log(data)
+      client.db("sample_healthcare").collection("clients").findOne({},function(err, client) {
+        console.log(client)
         
-        // write data to a new file named patientData.js
-        fs.writeFile('patientData.js', data, (err) => {  
+        // write data returned to a new file named clientData.js
+        fs.writeFile('clientData.js', client, (err) => {  
           if (err) throw err;
           console.log('data saved!');
         });
