@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 //purpose of this app don't need to save password
 function mapStateToProps(state) {
     return {
-        name: state.Patient.name,
+        patients: state.Patient
     }
 }
 
@@ -15,25 +15,26 @@ class DoctorView extends Component {
     super(props);
     // this.state = {
     // }
-
-
   };
 
-  render() {
+  render () {
+    const { patients } = this.props;
+
     return (
-      <div className="Login">
-        <Link to='/doctor'>Back</Link>
-        <h2>Your Patients</h2>
-        <ListGroup>
-        <ListGroupItem>{this.props.name}</ListGroupItem>
-        <ListGroupItem>{this.props.name}</ListGroupItem>
-        <ListGroupItem>{this.props.name}</ListGroupItem>
-        <ListGroupItem>{this.props.name}</ListGroupItem>
-        <ListGroupItem>{this.props.name}</ListGroupItem>
-      </ListGroup>
-    </div>
-    )
+        <div>
+          <Link to='/'>Back</Link>
+            <ListGroup>
+                <h1>Your Patients</h1>
+                { patients.map(patient => 
+                  <ListGroupItem>
+                    {patient.name}
+                  </ListGroupItem>
+                )}
+            </ListGroup>
+          </div>
+      )
   }
+
 }
 
 export default connect(mapStateToProps)(DoctorView)
