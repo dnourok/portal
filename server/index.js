@@ -13,32 +13,25 @@ client.connect(function(err,db){
       console.error('db', db)
   }
   else {
-      console.log('connected to '+ uri);
-      client.db("sample_healthcare").collection("clients").findOne({},function(err, client) {
-        console.log(client)
-        
-        // write data returned to a new file named clientData.js
-        fs.writeFile('clientData.js', client, (err) => {  
-          if (err) throw err;
-          console.log('data saved!');
-        });
+    console.log('connected to '+ uri);
+
+    client.db("sample_healthcare").collection("clients")
+    .find().toArray().then((data) => {
+      const clients = JSON.stringify(data)
+      console.log(clients)
+
+      // write client to a new file named patientData.js
+      fs.writeFile('clientData.js', clients, (err) => {  
+        if (err) throw err;
+        console.log('data saved!');
+      });
+  
     });
+
     client.close();
   }
 })
 
-
-
-
 // server.listen(PORT, () => {
 //   console.log(`Listening on http://localhost:${PORT}`);
 // });
-
-
-
-
-
-
-
-
-
