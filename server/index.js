@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const uri =  'mongodb+srv://dnourok:' + password + '@portal-lsi4f.mongodb.net/'
 const client = new MongoClient(uri, { useNewUrlParser: true });
-
+//test
 client.connect(function(err,db){
   if(err){
       console.error(err);
